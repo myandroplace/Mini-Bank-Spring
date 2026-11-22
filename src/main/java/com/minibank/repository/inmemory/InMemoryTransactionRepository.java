@@ -2,6 +2,7 @@ package com.minibank.repository.inmemory;
 
 import com.minibank.model.Transaction;
 import com.minibank.repository.TransactionRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
  * Реализация журнала транзакций в оперативной памяти.
  * Использует CopyOnWriteArrayList для безопасного чтения и записи в многопоточной среде.
  */
+@Repository
 public class InMemoryTransactionRepository implements TransactionRepository {
 
     private final List<Transaction> transactions = new CopyOnWriteArrayList<>();

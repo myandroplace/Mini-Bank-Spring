@@ -11,6 +11,7 @@ import com.minibank.model.TransactionType;
 import com.minibank.repository.AccountRepository;
 import com.minibank.repository.TransactionRepository;
 import com.minibank.service.BankService;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
  * Внедрение зависимостей (Dependency Injection) выполнено через конструктор.
  * Это подготавливает код к бесшовной миграции на Spring Framework (@Service, @Autowired).
  */
+@Service
 public class BankServiceImpl implements BankService {
 
     private final AccountRepository accountRepository;

@@ -2,6 +2,7 @@ package com.minibank.repository.inmemory;
 
 import com.minibank.model.Account;
 import com.minibank.repository.AccountRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Использует ConcurrentHashMap для обеспечения целостности данных при параллельном доступе
  * и AtomicLong для генерации монотонно возрастающих первичных ключей.
  */
+@Repository
 public class InMemoryAccountRepository implements AccountRepository {
 
     private final Map<Long, Account> storage = new ConcurrentHashMap<>();
